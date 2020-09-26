@@ -1,7 +1,7 @@
 <template>
   <div>
     <div :key="todo.id" v-for="todo in todos">
-      <TodoItem :todo="todo" @onChange="$emit('onChange', todo.id)" />
+      <TodoItem :todo="todo" @onChange="$emit('onchange', todo.id)" />
     </div>
   </div>
 </template>
@@ -13,5 +13,3 @@
     components: { TodoItem }
   };
 </script>
-
-<style></style>

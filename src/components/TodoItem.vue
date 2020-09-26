@@ -11,10 +11,8 @@ export default {
   methods: {
     onchange() {
       this.todo.completed = !this.todo.completed;
-      this.$emit("onChange", this.todo);
+      this.$emit("onchange", this.todo);
     }
   }
 };
 </script>
-
-<style></style>
