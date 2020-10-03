@@ -1,15 +1,20 @@
 <template>
   <div>
     <div :key="todo.id" v-for="todo in todos">
-      <TodoItem :todo="todo" @onChange="$emit('onchange', todo.id)" />
+      <TodoItem :todo="todo" v-on:onchange="markComplete" />
     </div>
   </div>
 </template>
 
 <script>
-  import TodoItem from './TodoItem';
-  export default {
-    props: ['todos'],
-    components: { TodoItem }
-  };
+import TodoItem from "./TodoItem";
+export default {
+  props: ["todos"],
+  components: { TodoItem },
+  methods: {
+    markComplete({ id }) {
+      console.log(id);
+    },
+  },
+};
 </script>
